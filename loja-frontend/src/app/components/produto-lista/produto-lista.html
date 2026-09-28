@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Lista de Produtos</h2>
+  
+  <ul *ngIf="produtos.length > 0; else carregando">
+    <li *ngFor="let produto of produtos">
+      <strong>{{ produto.nome }}</strong> - R$ {{ produto.preco }}
+    </li>
+  </ul>
+
+  <ng-template #carregando>
+    <p>Carregando produtos ou nenhum produto encontrado...</p>
+  </ng-template>
+</div>
